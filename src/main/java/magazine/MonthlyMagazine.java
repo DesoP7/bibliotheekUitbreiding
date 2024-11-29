@@ -2,19 +2,9 @@ package magazine;
 
 import java.time.LocalDate;
 
+// Represents a monthly magazine
 public class MonthlyMagazine extends Magazine {
-
-    // Constructor
-    public MonthlyMagazine(long id, String title, String publisher, LocalDate publicationDate, String copyEditor, int pages, String issn, int issueNumber) {
-        super(id, title, publisher, publicationDate, copyEditor, pages, issn, issueNumber);
-    }
-
-    public int getMonthNumber() {
-        return getPublicationDate().getMonthValue();
-    }
-
-    @Override
-    public String getOverviewText() {
-        return "Isbn: " + getIsbn() + " - Title: " + getTitle() + " - Month: " + getMonthNumber();
+    public MonthlyMagazine(long id, String title, String publisher, LocalDate publicationDate, String editor, int issueNumber, String isbn) {
+        super(id, title, publisher, publicationDate, editor, issueNumber, isbn); // Calls the constructor of Magazine
     }
 }

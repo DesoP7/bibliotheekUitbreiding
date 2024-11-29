@@ -1,5 +1,7 @@
 package magazine;
 
+import library.MagazineRepository;
+
 import java.time.LocalDate;
 import java.util.Scanner;
 
@@ -19,7 +21,7 @@ public class MagazineController {
     public static void addMagazine() {
         Scanner scanner = new Scanner(System.in);
         // Gather input for new magazine...
-        Magazine newMagazine = new DailyMagazine(1,"title","publisher", LocalDate.now(),"123",200,"issn",123); // or WeeklyMagazine, MonthlyMagazine
+        Magazine newMagazine = new DailyMagazine(1,"title","publisher", LocalDate.now(),"123",200,"isbn",123); // or WeeklyMagazine, MonthlyMagazine
         magazineRepository.addMagazine(newMagazine);
     }
 }

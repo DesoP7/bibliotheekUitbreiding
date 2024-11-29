@@ -2,15 +2,9 @@ package magazine;
 
 import java.time.LocalDate;
 
+// Represents a daily magazine
 public class DailyMagazine extends Magazine {
-
-    // Constructor
-    public DailyMagazine(long id, String title, String publisher, LocalDate publicationDate, String copyEditor, int pages, String issn, int issueNumber) {
-        super(id, title, publisher, publicationDate, copyEditor, pages, issn, issueNumber);
-    }
-
-    @Override
-    public String getOverviewText() {
-        return "Isbn: " + getIsbn() + " - Title: " + getTitle() + " - Issue: " + getIssueNumber();
+    public DailyMagazine(long id, String title, String publisher, LocalDate publicationDate, String editor, int issueNumber, String isbn, int i) {
+        super(id, title, publisher, publicationDate, editor, issueNumber, isbn); // Calls the constructor of Magazine
     }
 }

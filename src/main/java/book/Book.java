@@ -1,47 +1,39 @@
 package book;
 
 import library.Item;
+
 import java.time.LocalDate;
 
+// Represents a book in the library
 public class Book extends Item {
-    private String author;
-    private final String isbn;
-    private boolean borrowed; // New field to track borrowing status
+    private final String author; // Author of the book
+    private final String isbn; // ISBN of the book
+    private final int pages; // Number of pages in the book
 
-    // Constructor
+    // Constructor for initializing a Book
     public Book(long id, String title, String publisher, int pages, LocalDate publicationDate, String author, String isbn) {
-        super(id, title, publisher, pages, publicationDate);
+        super(id, title, publisher, publicationDate); // Calls the constructor of Item
+        this.pages = pages;
         this.author = author;
         this.isbn = isbn;
-        this.borrowed = false; // Default to not borrowed
     }
 
-    // Getter and setter for author
+    // Getters for book-specific properties
     public String getAuthor() {
         return author;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    // Getter for ISBN
     public String getIsbn() {
         return isbn;
     }
 
-    // New methods for borrowed status
-    public boolean isBorrowed() {
-        return borrowed;
+    public int getPages() {
+        return pages;
     }
 
-    public void setBorrowed(boolean borrowed) {
-        this.borrowed = borrowed;
-    }
-
-    // Overridden method to provide book overview text
+    // Overrides the abstract method to return a detailed overview of the book
     @Override
     public String getOverviewText() {
-        return "Isbn: " + isbn + " - Title: " + getTitle() + " - Author: " + author;
+        return "Book - ID: " + getId() + ", Title: " + getTitle() + ", Author: " + author + ", ISBN: " + isbn + ", Pages: " + pages + ", Borrowed: " + isBorrowed();
     }
 }
